@@ -14,4 +14,21 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
+  build: {
+    transpile: ['sequelize', 'sequelize-cli'],
+  },
+  runtimeConfig: {
+    public: {
+      mtApiUrl: process.env.MT_API_URL || 'http://localhost:3000',
+    },
+  },
+  plugins: [
+    {
+      src: '~/server/plugins/db-init.js', // Đảm bảo đường dẫn đúng
+      mode: 'server', // Chạy plugin chỉ trên server (bỏ `client`)
+    },
+  ],
+  nitro: {
+    preset: 'node',
+  },
 })

@@ -1,0 +1,72 @@
+openapi: 3.0.0
+info:
+  title: Blog API
+  version: 1.0.0
+
+paths:
+  /api/posts/list:
+    get:
+      summary: Get list of posts
+      operationId: getPostListResponse # Tên operation để tạo type
+      parameters:
+        - name: q
+          in: query
+          required: false
+          description: Search term
+          schema:
+            type: string
+        - name: sortBy
+          in: query
+          required: false
+          description: Field to sort by
+          schema:
+            type: string
+        - name: order
+          in: query
+          required: false
+          description: Sort order (ASC or DESC)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostListResponse'
+
+components:
+  schemas:
+    Post:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        date:
+          type: string
+          format: date-time
+
+    Meta:
+      type: object
+      properties:
+        currentPage:
+          type: integer
+        totalPages:
+          type: integer
+        totalItems:
+          type: integer
+        perPage:
+          type: integer
+
+    PostListResponse:
+      type: object
+      x-type-name: PostListResponse # Gợi ý tên type khi tạo
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Post'
+        meta:
+          $ref: '#/components/schemas/Meta'
