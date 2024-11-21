@@ -5,4 +5,12 @@ export default antfu({
     'no-undef': 'off',
     'node/prefer-global/process': 'off',
   },
+  overrides: [
+    {
+      files: ['*.js', '*.ts', '*.vue'],
+      rules: {
+        'brace-style': ['error', '1tbs'],
+      },
+    },
+  ],
 })

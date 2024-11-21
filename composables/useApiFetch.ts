@@ -27,10 +27,12 @@ export default function useApiFetch() {
         }
 
         return res
-      } catch (error) {
+      }
+      catch (error) {
         console.error('API Error:', error)
         throw error
-      } finally {
+      }
+      finally {
         loadingCount.value -= 1
       }
     }

@@ -14,10 +14,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1 class="mb-12 text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">My resume</h1>
+  <h1 class="mb-12 text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
+    {{ $t('resume_heading', { person: 'tuyenf' }) }}
+  </h1>
   <!-- Education -->
   <div>
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Education</h2>
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+      {{ $t('resume_title_education') }}
+    </h2>
     <div class="flex flex-col gap-x-24 mt-8">
       <div class="flex items-center mb-6">
         <div class="shrink-0 mr-5 flex justify-center items-center w-14 h-14 rounded-full bg-primary-100 dark:bg-primary-900">
@@ -36,8 +40,12 @@ onMounted(() => {
           </svg>
         </div>
         <div class="grow">
-          <h3 class="mb-2 font-bold dark:text-white">Project Administration</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">University of Finance - Marketing</p>
+          <h3 class="mb-2 font-bold dark:text-white">
+            Project Administration
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            University of Finance - Marketing
+          </p>
         </div>
       </div>
       <div class="flex items-center">
@@ -54,18 +62,26 @@ onMounted(() => {
           </svg>
         </div>
         <div class="grow">
-          <h3 class="mb-2 font-bold dark:text-white">Frontend Developer Course</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">FPT APTECH Computer Education</p>
+          <h3 class="mb-2 font-bold dark:text-white">
+            Frontend Developer Course
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            FPT APTECH Computer Education
+          </p>
         </div>
       </div>
     </div>
   </div>
   <!-- Technical Skills -->
   <div class="mt-8 pt-5">
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Technical Skills</h2>
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+      {{ $t('resume_title_skill') }}
+    </h2>
     <div class="flex flex-col mt-6">
       <div>
-        <h2 class="mb-2 text-base font-semibold text-gray-900 dark:text-white">Programming Languages:</h2>
+        <h2 class="mb-2 text-base font-semibold text-gray-900 dark:text-white">
+          Programming Languages:
+        </h2>
         <ul class="max-w-md text-sm space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
           <li>JavaScript</li>
           <li>
@@ -74,7 +90,9 @@ onMounted(() => {
         </ul>
       </div>
       <div class="mt-3">
-        <h2 class="mb-2 text-base font-semibold text-gray-900 dark:text-white">Frameworks/Libraries:</h2>
+        <h2 class="mb-2 text-base font-semibold text-gray-900 dark:text-white">
+          Frameworks/Libraries:
+        </h2>
         <ul class="text-sm space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
           <li>
             <strong class="text-primary-500">VueJS</strong>
@@ -84,11 +102,11 @@ onMounted(() => {
           </li>
           <li>
             <b>State Management:</b>
-            VueX, Pinia
+            VueX, <strong class="text-primary-500">Pinia</strong>
           </li>
           <li>
             <b>UI Libraries:</b>
-            Bootstrap, TailwindCSS, Vuetify, Material UI, HeadlessUI, Ant Design
+            Bootstrap, <strong class="text-primary-500">TailwindCSS</strong>, Vuetify, Material UI, HeadlessUI, Ant Design
           </li>
           <li>
             <b>Adobe UXP:</b>
@@ -97,7 +115,9 @@ onMounted(() => {
         </ul>
       </div>
       <div class="mt-3">
-        <h2 class="mb-2 text-base font-semibold text-gray-900 dark:text-white">Tools:</h2>
+        <h2 class="mb-2 text-base font-semibold text-gray-900 dark:text-white">
+          Tools:
+        </h2>
         <ul class="text-sm space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
           <li>
             <b>Version Control:</b>
@@ -109,7 +129,7 @@ onMounted(() => {
           </li>
           <li>
             <b>Design Tools:</b>
-            JFigma, Illustrator, Photoshop
+            Figma, Illustrator, Photoshop
           </li>
         </ul>
       </div>
@@ -117,7 +137,9 @@ onMounted(() => {
   </div>
   <!-- Work Experience -->
   <div class="mt-8 pt-5">
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Work Experience</h2>
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+      {{ $t('resume_title_experience') }}
+    </h2>
     <div class="mt-6">
       <div class="pl-6">
         <ol class="relative border-s border-gray-200 dark:border-gray-700">
@@ -163,8 +185,12 @@ onMounted(() => {
               <span class="text-slate-400 dark:text-slate-600">·</span>
               March 2024
             </time>
-            <h3 class="text-base font-semibold text-gray-900 dark:text-white">VueJS Developer</h3>
-            <p class="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">Ycomm VietNam</p>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              VueJS Developer
+            </h3>
+            <p class="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">
+              Ycomm VietNam
+            </p>
           </li>
           <li class="mb-10 ms-12">
             <span
@@ -177,8 +203,12 @@ onMounted(() => {
               <span class="text-slate-400 dark:text-slate-600">·</span>
               February 2023
             </time>
-            <h3 class="text-base font-semibold text-gray-900 dark:text-white">Front End Developer</h3>
-            <p class="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">ePlus Technology Solutions Corp.,</p>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Front End Developer
+            </h3>
+            <p class="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">
+              ePlus Technology Solutions Corp.,
+            </p>
           </li>
           <li class="mb-10 ms-12">
             <span
@@ -191,8 +221,12 @@ onMounted(() => {
               <span class="text-slate-400 dark:text-slate-600">·</span>
               March 2022
             </time>
-            <h3 class="text-base font-semibold text-gray-900 dark:text-white">Front End Developer (Fresher)</h3>
-            <p class="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">Le Gia Technology & Communication Company Limited.</p>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              Front End Developer (Fresher)
+            </h3>
+            <p class="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">
+              Le Gia Technology & Communication Company Limited.
+            </p>
           </li>
         </ol>
       </div>
@@ -200,7 +234,9 @@ onMounted(() => {
   </div>
   <!-- Projects -->
   <div class="mt-8 pt-5">
-    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Projects</h2>
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+      {{ $t('resume_title_project') }}
+    </h2>
     <div class="pb-5 flex flex-col mt-6">
       <div class="grid gap-8 lg:grid-cols-3">
         <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
@@ -239,7 +275,9 @@ onMounted(() => {
             </span>
             <span class="text-xs">Team Size: 4</span>
           </div>
-          <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Photoshop extension</h3>
+          <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Photoshop extension
+          </h3>
           <div class="text-sm mt-2">
             Vue3
             <span class="text-slate-400 dark:text-slate-600">·</span>
@@ -280,7 +318,9 @@ onMounted(() => {
             <span class="bg-pink-100 text-pink-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300"> Le Gia ICT </span>
             <span class="text-xs">Team Size: 2</span>
           </div>
-          <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">MZG Vietnam Ecommerce Site</h3>
+          <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+            MZG Vietnam Ecommerce Site
+          </h3>
           <div class="text-sm mt-2">
             HTML
             <span class="text-slate-400 dark:text-slate-600">·</span>

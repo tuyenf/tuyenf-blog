@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <footer class="bg-white dark:bg-gray-900 pb-14 md:pb-0">
+  <footer class="pb-14 md:pb-0">
     <div class="mx-auto w-full max-w-screen-xl pb-4 lg:pb-6">
-      <hr class="my-6 border-gray-200 mx-auto dark:border-gray-700 lg:my-8" />
+      <hr class="my-6 border-gray-200 mx-auto dark:border-gray-700 lg:my-8">
       <div class="flex flex-col-reverse md:flex-row items-center justify-between">
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           © 2023

@@ -12,7 +12,7 @@
         class="w-10 h-10 rounded-full"
         src="assets/media/images/me.png"
         alt="tuyenf.dev"
-      />
+      >
     </NuxtLink>
     <ul class="flex justify-around py-2 md:py-0 md:justify-center grow md:flex-col">
       <li class="py-2">

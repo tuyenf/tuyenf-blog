@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   ssr: false,
   compatibilityDate: '2024-04-03',
   devtools: { enabled: false },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/google-fonts', '@vueuse/nuxt'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxtjs/google-fonts', '@vueuse/nuxt', 'nuxt-svgo'],
   css: ['assets/styles/main.scss'],
   postcss: {
     plugins: {
@@ -30,5 +30,14 @@ export default defineNuxtConfig({
   ],
   nitro: {
     preset: 'node',
+  },
+  svgo: {
+    autoImportPath: '~/assets/media/icons/',
+    componentPrefix: 'icon',
+  },
+  googleFonts: {
+    families: {
+      'Be Vietnam Pro': true,
+    },
   },
 })

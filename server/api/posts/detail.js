@@ -1,6 +1,6 @@
 import Post from '~/models/Post.js'
 
-export default defineEventHandler(async event => {
+export default defineEventHandler(async (event) => {
   const query = getQuery(event)
   const { id } = query
 

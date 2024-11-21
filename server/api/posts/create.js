@@ -1,6 +1,6 @@
 import Post from '~/models/Post.js'
 
-export default defineEventHandler(async event => {
+export default defineEventHandler(async (event) => {
   const body = await readBody(event)
 
   const { title, content, date } = body

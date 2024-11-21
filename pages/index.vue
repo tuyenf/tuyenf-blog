@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <p>Hello World!</p>
+  <p>Hello world!</p>
 </template>
 
 <style scoped></style>

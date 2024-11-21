@@ -7,7 +7,8 @@ async function addPost() {
       method: 'POST',
       body: newPost.value,
     })
-  } catch (error) {
+  }
+  catch (error) {
     console.error(error)
   }
 }
@@ -18,7 +19,7 @@ async function addPost() {
     <input
       v-model="newPost.title"
       placeholder="Title"
-    />
+    >
     <textarea
       v-model="newPost.content"
       placeholder="Content"
@@ -26,7 +27,9 @@ async function addPost() {
     <input
       v-model="newPost.date"
       type="date"
-    />
-    <button type="submit">Add Post</button>
+    >
+    <button type="submit">
+      Add Post
+    </button>
   </form>
 </template>
