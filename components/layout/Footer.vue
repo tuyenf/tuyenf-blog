@@ -1,4 +1,29 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { IconGithub, IconLinkedin, IconTelegram, IconTwitter } from '#components'
+
+const socials = [
+  {
+    name: 'Twitter',
+    link: 'https://x.com/Ngtuyenf',
+    icon: IconTwitter,
+  },
+  {
+    name: 'GitHub',
+    link: 'https://github.com/tuyenf',
+    icon: IconGithub,
+  },
+  {
+    name: 'Linkedin',
+    link: 'https://www.linkedin.com/in/tuyenf',
+    icon: IconLinkedin,
+  },
+  {
+    name: 'Telegram',
+    link: 'https://t.me/tuyenf',
+    icon: IconTelegram,
+  },
+]
+</script>
 
 <template>
   <footer class="h-10 px-3 md:px-4 border-t border-gray-200 dark:border-gray-700 md:pb-0 shrink-0">
@@ -9,64 +34,24 @@
           <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400 ms-3">&copy; 2024 tuyenf.dev</span>
         </div>
         <ul class="flex justify-center">
-          <li>
+          <li
+            v-for="(social, index) in socials"
+            :key="index"
+            class="flex justify-center item-center"
+          >
             <a
               data-interaction="fasle"
               target="_blank"
               class="flex justify-center items-center text-primary hover:text-primary transition duration-150 ease-in-out"
-              href="https://x.com/Ngtuyenf"
-              aria-label="Twitter"
+              :href="social.link"
+              :aria-label="social.name"
             >
-              <IconTwitter
-                class="w-8 h-8 fill-current"
+              <component
+                :is="social.icon"
+                :class="[social.name === 'GitHub' ? 'w-[22px] h-[22px]' : 'w-8 h-8']"
                 :font-controlled="false"
               />
-              <span class="sr-only">Twitter</span>
-            </a>
-          </li>
-          <li>
-            <a
-              data-interaction="false"
-              target="_blank"
-              class="flex justify-center items-center text-primary hover:text-primary transition duration-150 ease-in-out"
-              href="https://www.linkedin.com/in/tuyenf"
-              aria-label="YouTube"
-            >
-              <IconLinkedin
-                class="w-8 h-8 fill-current"
-                :font-controlled="false"
-              />
-              <span class="sr-only">Linkedin</span>
-            </a>
-          </li>
-          <li>
-            <a
-              data-interaction="false"
-              target="_blank"
-              class="flex justify-center items-center text-primary hover:text-primary transition duration-150 ease-in-out"
-              href="https://github.com/tuyenf"
-              aria-label="Github"
-            >
-              <IconGithub
-                class="w-8 h-8 fill-current"
-                :font-controlled="false"
-              />
-              <span class="sr-only">Github</span>
-            </a>
-          </li>
-          <li>
-            <a
-              data-interaction="false"
-              target="_blank"
-              class="flex justify-center items-center text-primary hover:text-primary transition duration-150 ease-in-out"
-              href="https://t.me/tuyenf"
-              aria-label="Telegram"
-            >
-              <IconTelegram
-                class="w-8 h-8 fill-current"
-                :font-controlled="false"
-              />
-              <span class="sr-only">Telegram</span>
+              <span class="sr-only">{{ social.name }}</span>
             </a>
           </li>
         </ul>
