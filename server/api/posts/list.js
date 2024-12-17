@@ -65,8 +65,7 @@ export default defineEventHandler(async (event) => {
         perPage: limit,
       },
     }
-  }
-  catch (error) {
+  } catch (error) {
     console.error('Error in API:', error.message)
     throw createError({
       statusCode: 500,

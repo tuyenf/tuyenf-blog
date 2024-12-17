@@ -1,23 +1,18 @@
+<script setup lang="ts"></script>
+
 <template>
-  <section class="min-h-screen">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-      <div class="mx-auto max-w-screen-sm text-center">
-        <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600 dark:text-primary-500">
-          404
-        </h1>
-        <p class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl dark:text-white">
-          Something's missing.
-        </p>
-        <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
-          Sorry, we can't find that page. You'll find lots to explore on the home page.
-        </p>
-        <NuxtLink
-          to="/"
-          class="cursor-pointer inline-flex text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4"
-        >
-          Back to Homepage
-        </NuxtLink>
-      </div>
+  <section class="min-h-screen bg-primary-50 dark:bg-zinc-950 p-10 md:p-20 flex flex-col dark:text-white">
+    <div class="noise w-full h-full absolute top-0 left-0" />
+    <span class="shrink-0 text-xl">404</span>
+    <div class="grow flex flex-col justify-center">
+      <h1 class="font-medium text-3xl mb-4 md:mb-6 md:text-5xl">Page not found</h1>
+      <p class="text-md md:text-lg">The page you are looking for doesn't exist or has been moved.</p>
     </div>
   </section>
 </template>
+
+<style scoped>
+.noise {
+  background: url('assets/media/images/noise.png') repeat center center fixed;
+}
+</style>

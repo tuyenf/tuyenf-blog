@@ -27,8 +27,7 @@ async function fetchPosts() {
     const { data, meta } = response.data || {}
     posts.value = data
     pagination.value = meta
-  }
-  catch (error) {
+  } catch (error) {
     console.error('Error fetching posts:', error)
   }
 }
@@ -37,24 +36,26 @@ onMounted(async () => {
   await fetchPosts()
 })
 function getDetailRoute(id?: number) {
-  if (!id)
-    return '/'
+  if (!id) return '/'
   return `/posts/${id}`
 }
 </script>
 
 <template>
-  <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-5xl">
-    My stuff
-  </h1>
+  <AppHeading :is-hero-section="true">
+    <template #title>
+      <h1 class="mb-4 text-4xl font-extrabold text-center leading-none tracking-tight md:text-5xl lg:text-7xl">
+        <span class="text-primary-600 dark:text-primary-500">Nice</span> stuff <br />I want to share
+      </h1>
+    </template>
+    <template #subtitle> who love coding, writing and cooking. </template>
+  </AppHeading>
   <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
     I’m a Frontend Developer experienced in Vue.js, Nuxt.js, TypeScript, and modern tools,
-    <br>
+    <br />
     passionate about building user-friendly, visually appealing interfaces.
   </p>
-  <div v-if="isLoading">
-    Loading...
-  </div>
+  <div v-if="isLoading">Loading...</div>
   <ul v-else-if="posts">
     <li
       v-for="post in posts"
@@ -65,9 +66,7 @@ function getDetailRoute(id?: number) {
       </NuxtLink>
     </li>
   </ul>
-  <div v-else>
-    No data
-  </div>
+  <div v-else>No data</div>
 </template>
 
 <style scoped></style>

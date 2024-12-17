@@ -1,24 +1,19 @@
-<script setup lang="ts">
-import AppFooter from '~/components/AppFooter.vue'
-import AppHeader from '~/components/AppHeader.vue'
-import AppSidebar from '~/components/AppSidebar.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="max-w-7xl mx-auto">
-    <div class="min-h-screen flex">
-      <main class="grow overflow-hidden px-6">
-        <div class="w-full h-full max-w-[1072px] mx-auto flex flex-col">
-          <AppHeader />
-          <section class="grow md:pt-4 lg:pt-6">
-            <slot />
-          </section>
-          <AppFooter />
-        </div>
-      </main>
-      <AppSidebar />
-    </div>
+  <div class="min-h-dvh relative">
+    <div class="noise w-full h-full absolute top-0 left-0" />
+    <LayoutHeader />
+    <main class="min-h-[calc(100vh-2.5rem)] pt-10 max-w-screen-lg mx-auto px-4 md:px-10 xl:px-0">
+      <slot />
+    </main>
+    <LayoutFooter />
   </div>
 </template>
 
-<style scoped></style>
+<style lang="scss">
+.noise {
+  z-index: -1;
+  background: url('assets/media/images/noise.png') repeat center center fixed;
+}
+</style>
